@@ -58,6 +58,7 @@ SheetRelsWriter.prototype = {
       Type: RelType.Hyperlink
     };
 
+    console.log('TARGET: ' + hyperlink.target.toString());
     if (!hyperlink.target.toString().startsWith("#")) {
       relationship.TargetMode = 'External';
     }
