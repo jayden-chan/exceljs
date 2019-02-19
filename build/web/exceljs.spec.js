@@ -8554,12 +8554,17 @@ utils.inherits(WorkSheetXform, BaseXform, {
     model.hyperlinks.forEach(function (hyperlink) {
       rId = nextRid(rels);
       hyperlink.rId = rId;
-      rels.push({
+      var tmp = {
         Id: rId,
         Type: RelType.Hyperlink,
-        Target: hyperlink.target,
-        TargetMode: 'External'
-      });
+        Target: hyperlink.target
+      };
+
+      if (!hyperlink.target.toString().startsWith("#")) {
+        tmp.TargetMode = 'External';
+      }
+
+      rels.push(tmp);
     });
 
     var drawingRelsHash = [];
