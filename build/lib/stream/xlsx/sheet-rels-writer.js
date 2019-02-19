@@ -58,10 +58,10 @@ SheetRelsWriter.prototype = {
       Type: RelType.Hyperlink
     };
 
-    console.log('TARGET: ' + hyperlink.target.toString());
-    if (!hyperlink.target.toString().startsWith("#")) {
-      relationship.TargetMode = 'External';
-    }
+    // console.log('TARGET: ' + hyperlink.target.toString());
+    // if (!hyperlink.target.toString().startsWith("#")) {
+    //   relationship.TargetMode = 'External';
+    // }
 
     var rId = this._writeRelationship(relationship);
 
